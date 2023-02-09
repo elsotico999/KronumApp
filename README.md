@@ -1,4 +1,4 @@
-# KornumApp
+# KronumApp
 
 ### Librerias
     - fastapi uvicorn
