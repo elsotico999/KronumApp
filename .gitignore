@@ -1,0 +1,8 @@
+/tfm
+*.log
+*.pot
+*.pyc
+__pycache__/
+env
+.env
+.pytest_cache
