@@ -1,5 +1,4 @@
 version: '3.1'
-
 services:
   sqlite3:
     image: nouchka/sqlite3:latest
@@ -10,5 +9,8 @@ services:
   adminer:
     image: adminer
     restart: always
+    environment:
+      ADMINER_DEFAULT_DB_DRIVER: sqlite3
+      ADMINER_DEFAULT_DB_HOST: sqlite3
     ports:
-      - 8081:8081
+      - 8080:9000
