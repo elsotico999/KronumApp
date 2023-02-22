@@ -5,11 +5,12 @@ services:
     image: mysql:5.7
     container_name: db
     environment:
+      MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: kronumapp
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
-      UPLOAD_LIMIT: 700M
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      UPLOAD_LIMIT: 6666666M
     ports:
       - "6033:3306"
     volumes:
@@ -23,6 +24,7 @@ services:
       PMA_HOST: db
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
+      UPLOAD_LIMIT: 6666666M
     restart: always
     ports:
       - 8081:80
