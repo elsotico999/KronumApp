@@ -5,10 +5,11 @@ services:
     image: mysql:5.7
     container_name: db
     environment:
-      MYSQL_ROOT_PASSWORD: my_secret_password
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: kronumapp
-      MYSQL_USER: db_user
-      MYSQL_PASSWORD: db_user_pass
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      UPLOAD_LIMIT: 700M
     ports:
       - "6033:3306"
     volumes:
