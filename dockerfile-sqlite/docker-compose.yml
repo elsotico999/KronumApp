@@ -13,4 +13,4 @@ services:
       ADMINER_DEFAULT_DB_DRIVER: sqlite3
       ADMINER_DEFAULT_DB_HOST: sqlite3
     ports:
-      - 8080:9000
+      - 8080:8080
