@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from v1.utils import db
+from v1.scripts.create_tables import create_tables
 
-
+create_tables()
 app = FastAPI()
 
 
