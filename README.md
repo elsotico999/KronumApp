@@ -8,6 +8,8 @@
     - python-dotenv
     - pip install peewee
     - pip install pymysql
+    - pip install "pydantic[email]"
+    - pip install "passlib[bcrypt]"
 ######
     TODO: 
         # conectar bbdd SQL 
