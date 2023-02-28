@@ -16,3 +16,4 @@
     TODO: 
         # crear RUTAS PRINCIPALES TABLAS - EN POCRESO
         # CREAR CAMPO team_id que tenga relación con equipo en la tabla usuarios
+        # HACER MAS DINAMICO LA CREACIÓN DE RUTAS
