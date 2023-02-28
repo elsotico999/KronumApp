@@ -13,3 +13,6 @@ class Settings(BaseSettings):
     db_host: str = os.getenv('DB_HOST')
     db_port: int = os.getenv('DB_PORT')
 
+    secret_key: str = os.getenv('SECRET_KEY')
+    token_expires: int = os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES')
+

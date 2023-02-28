@@ -4,11 +4,8 @@ from passlib.context import CryptContext
 
 from ..model.users_model import Users as UserModel
 from ..schema import user_schema
-
+from ..service.auth_service import get_password_hash
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-def get_password_hash(password):
-    return pwd_context.hash(password)
 
 def create_user(user:user_schema.UserRegister):
 
