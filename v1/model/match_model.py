@@ -4,7 +4,7 @@ from ..utils.db import db
 
 class Match(peewee.Model):
     id = peewee.AnyField(unique=True, index=True)
-    country_id  = peewee.IntegerField()
+    country_id = peewee.IntegerField()
     league_id = peewee.IntegerField()
     season = peewee.TextField()
     stage = peewee.IntegerField()
