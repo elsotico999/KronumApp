@@ -119,4 +119,4 @@ class MatchBase(BaseModel):
     bsd: Optional[float] = Field ()
     bsa: Optional[float] = Field ()
 class Match(MatchBase):
-    pass
+    id: Optional[int] = Field(...,example="12",)
