@@ -12,7 +12,6 @@ class LeagueBase(BaseModel):
     
 class League(LeagueBase):
     id: Optional[int] = Field(..., example="1")
-    # country_id:Optional[int]= Field(..., example="1")
 
 
     
