@@ -3,7 +3,7 @@ from fastapi import status
 from typing  import List, Optional
 from ..schema import team_schema
 from ..service import team_service
-from ..ultils.db import get_db
+from ..utils.db import get_db
 
 router = APIRouter(prefix="/api/v1/country")
 
