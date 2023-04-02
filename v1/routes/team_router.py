@@ -5,10 +5,10 @@ from ..schema import team_schema
 from ..service import team_service
 from ..utils.db import get_db
 
-router = APIRouter(prefix="/api/v1/country")
+router = APIRouter(prefix="/api/v1/team")
 
 @router.get("/",
-            tags=["country"],
+            tags=["team"],
             status_code=status.HTTP_200_OK,
             dependencies=[Depends(get_db)])
 def teams(id:Optional[int] = Query(None)):
