@@ -6,6 +6,8 @@ from v1.routes.user_router import router as user_router
 from v1.routes.country_router import router as country_router
 from v1.routes.league_router import router as league_router
 from v1.routes.match_router import router as match_router
+from v1.routes.team_router import router as team_router
+
 app = FastAPI()
 
 origins = [
@@ -30,5 +32,6 @@ app.include_router(user_router)
 app.include_router(country_router)
 app.include_router(league_router)
 app.include_router(match_router)
+app.include_router(team_router)
 
 
