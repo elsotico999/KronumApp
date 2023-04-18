@@ -13,7 +13,10 @@ class Userbase(BaseModel):
         max_length=50,
         example="UnUsername"
     )
-
+    id_team: int = Field(
+        ...,
+        example="9"
+    )
 class User(Userbase):
     id: int = Field(
         ...,

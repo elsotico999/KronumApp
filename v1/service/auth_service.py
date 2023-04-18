@@ -7,6 +7,7 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 
 from ..model.users_model import Users as UserModel
+from ..model.team_model import Team as TeamModel
 from ..schema.token_schema import TokenData
 from ..utils.settings import Settings
 
@@ -25,19 +26,32 @@ def verify_password(plain_password, password):
 def get_password_hash(password):
     return pwd_context.hash(password)
 
-def get_user(username: str):
-    return UserModel.filter((UserModel.email == username) | (UserModel.username == username)).first()
-
+def get_user(email: str):
+    # user y team
+    user = UserModel.filter((UserModel.email == email)).first()
+    team = TeamModel.filter((TeamModel.id == user.id_team)).first()
+    data = {
+        'id': user.id,
+        'email':user.email,
+        'password':user.password,
+        'team_api_id':team.team_api_id,
+        'team_fifa_api_id':team.team_fifa_api_id,
+        'team_long_name': team.team_long_name,
+        'team_short_name': team.team_short_name
+    }
+    return data
 def authenticate_user(username: str, password: str):
     user = get_user(username)
+    print(user['password'])
     if not user:
         return False
-    if not verify_password(password, user.password):
+    if not verify_password(password, user['password']):
         return False
     return user
 
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
+
     to_encode = data.copy()
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
@@ -58,7 +72,12 @@ def generate_token(username, password):
         )
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     return create_access_token(
-        data={"uId": user.id,"uName": user.username}, expires_delta=access_token_expires
+        data={"id": user['id'],
+            "email": user['email'],
+            'team_api_id':user['team_api_id'],
+            'team_fifa_api_id':user['team_fifa_api_id'],
+            'team_long_name': user['team_long_name'],
+            'team_short_name': user['team_short_name']}, expires_delta=access_token_expires
     )
 
 

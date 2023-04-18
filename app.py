@@ -14,7 +14,6 @@ origins = [
     "*"
 ]
 
-
 app.add_middleware (
     CORSMiddleware,
     allow_origins=origins,
@@ -23,7 +22,7 @@ app.add_middleware (
     allow_headers=["*"],    
 )
 
-
+# TERMIANR EL LOGIN CON LA API MOSTRAR DATOS 
 @app.get('/')
 def home():
     return {"message": "Tonto el que lo lea"}

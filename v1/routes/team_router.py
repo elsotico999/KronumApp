@@ -12,4 +12,13 @@ router = APIRouter(prefix="/api/v1/team")
             status_code=status.HTTP_200_OK,
             dependencies=[Depends(get_db)])
 def teams(id:Optional[int] = Query(None)):
-    return team_service.get_teams(id)
+    if(id == None):
+        return team_service.get_teams(id)
+    else:
+       return team_service.get_team(id) 
+
+@router.get('/{team_id}',tags=["team"],
+            status_code=status.HTTP_200_OK,
+            dependencies=[Depends(get_db)])
+def team(id:Optional[int]):
+    return team_service.get_team(id)
