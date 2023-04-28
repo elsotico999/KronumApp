@@ -10,4 +10,4 @@ class Team(peewee.Model):
     team_short_name	 = peewee.CharField()
 
     class Meta:
-        database = db
+        database = db 

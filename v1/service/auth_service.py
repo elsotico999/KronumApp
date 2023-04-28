@@ -34,6 +34,7 @@ def get_user(email: str):
         'id': user.id,
         'email':user.email,
         'password':user.password,
+        'id_team':user.id_team,
         'team_api_id':team.team_api_id,
         'team_fifa_api_id':team.team_fifa_api_id,
         'team_long_name': team.team_long_name,
@@ -42,7 +43,7 @@ def get_user(email: str):
     return data
 def authenticate_user(username: str, password: str):
     user = get_user(username)
-    print(user['password'])
+    
     if not user:
         return False
     if not verify_password(password, user['password']):
