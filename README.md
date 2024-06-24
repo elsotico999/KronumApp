@@ -1,5 +1,5 @@
 # KronumApp
-    Trabajo realizado de la mano de Carlos Manuel Soto de Freitas y Juan Camilo Amaya
+    Trabajo realizado de la mano de Carlos Manuel Soto de Freitas y Juan Camilo Amaya. Aplicación para predecir resultados de partidos de fútbol, usando como base de datos todos los resultados a nivel internacional de los países que se encuentran registrados en la Fifa. 
 
     commando:
         - uvicorn app:app --reload 
